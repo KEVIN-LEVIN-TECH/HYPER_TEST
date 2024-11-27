@@ -12,7 +12,7 @@ cmd({
 async (conn, mek, m, { from, reply, pushname }) => {
     try {
         // Image URL (Replace this with your actual image URL)
-        const imageUrl = 'https://i.ibb.co/QdCxSQ6/20241123-121529.jpg';  // Change with your image URL
+        const imageUrl = 'https://i.ibb.co/tpJGQkr/20241122-203120.jpg';  // Change with your image URL
 
         // Alive Message Content
         const aliveDesc = `
