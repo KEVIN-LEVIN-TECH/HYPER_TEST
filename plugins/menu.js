@@ -39,7 +39,7 @@ cmd({
 
 > ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ꜱᴇɴᴇꜱʜ`;
 
-        const vv = await conn.sendMessage(from, { image: { url: "imgurl" }, caption: desc }, { quoted: mek });
+        const vv = await conn.sendMessage(from, { image: { url: "https://i.ibb.co/tpJGQkr/20241122-203120.jpg" }, caption: desc }, { quoted: mek });
 
         conn.ev.on('messages.upsert', async (msgUpdate) => {
             const msg = msgUpdate.messages[0];
