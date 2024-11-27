@@ -15,7 +15,7 @@ async (conn, mek, m, { from, reply }) => {
         const message = `
 💬 "${quote.content}"
 - ${quote.author}
-𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝐒𝐀𝐇𝐀𝐒-𝐌𝐃 𝐐𝐔𝐎𝐓𝐄𝐒
+𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝐇𝐘𝐏𝐄𝐑-𝐌𝐃 𝐐𝐔𝐎𝐓𝐄𝐒
         `;
         return reply(message);
     } catch (e) {
