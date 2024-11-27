@@ -1,7 +1,7 @@
-const config = require('../config')
-const {cmd , commands} = require('../command')
-const os = require("os")
-const {runtime} = require('../lib/functions')
+const config = require('../config');
+const { cmd, commands } = require('../command');
+const os = require("os");
+const { runtime } = require('../lib/functions');
 
 cmd({
     pattern: "menu",
@@ -9,19 +9,20 @@ cmd({
     desc: "menu the bot",
     react: "📜",
     category: "main"
-},
-async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
+}, async (conn, mek, m, {
+    from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply
+}) => {
     try {
         let desc = `👋 Hello ${pushname}
 
 ╭─「 ᴄᴏᴍᴍᴀɴᴅ ᴘᴀɴᴇʟ」
-│◈ ʀᴜɴᴛɪᴍᴇ : ${runtime(process.uptime())}
-│◈ ʀᴀᴍ ᴜꜱᴀɢᴇ : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-│◈ ᴘʟᴀᴛꜰᴏʀᴍ : ${os.hostname()}
-│◈ ᴠᴇʀꜱɪᴏɴ : 1.0.0
-╰──────────◈
+││◈ ʀᴜɴᴛɪᴍᴇ : ${runtime(process.uptime())}
+││◈ ʀᴀᴍ ᴜꜱᴀɢᴇ : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
+││◈ ᴘʟᴀᴛꜰᴏʀᴍ : ${os.hostname()}
+││◈ ᴠᴇʀꜱɪᴏɴ : 1.0.0
+╰─────────────◈
 
-╭╼╼╼╼╼╼╼╼╼╼
+╭╼╼╼╼╼╼╼╼╼╼─◈
 ├ 1 • OWNER
 ├ 2 • CONVERT
 ├ 3 • AI
@@ -32,13 +33,13 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ├ 8 • FUN
 ├ 9 • TOOLS
 ├ 10 • OTHER
-╰╼╼╼╼╼╼╼╼╼╼
+╰╼╼╼╼╼╼╼╼╼╼────◈
 
 🌟 Reply with the Number you want to select
 
 > ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ꜱᴇɴᴇꜱʜ`;
 
-        const vv = await conn.sendMessage(from, { image: { url: "imgurl"}, caption: desc }, { quoted: mek });
+        const vv = await conn.sendMessage(from, { image: { url: "imgurl" }, caption: desc }, { quoted: mek });
 
         conn.ev.on('messages.upsert', async (msgUpdate) => {
             const msg = msgUpdate.messages[0];
@@ -59,7 +60,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
 > ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ꜱᴇɴᴇꜱʜ`);
                         break;
-                    case '2':               
+                    case '2':
                         reply(`◈╾──────CONVERT COMMAND LIST──────╼◈
 
 ╭────────◈
@@ -70,7 +71,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
 > ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ꜱᴇɴᴇꜱʜ`);
                         break;
-                    case '3':               
+                    case '3':
                         reply(`◈╾──────AI COMMAND LIST──────╼◈
 
 ╭────────◈
@@ -81,7 +82,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
 > ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ꜱᴇɴᴇꜱʜ`);
                         break;
-                    case '4':               
+                    case '4':
                         reply(`◈╾──────SEARCH COMMAND LIST──────╼◈
 
 ╭────────◈
@@ -95,7 +96,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
 > ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ꜱᴇɴᴇꜱʜ`);
                         break;
-                    case '5':               
+                    case '5':
                         reply(`◈╾──────DOWNLOAD COMMAND LIST──────╼◈
 
 ╭────────◈
@@ -145,7 +146,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
 > ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ꜱᴇɴᴇꜱʜ`);
                         break;
-                    case '6':               
+                    case '6':
                         reply(`◈╾──────MAIN COMMAND LIST──────╼◈
 
 ╭────────◈
@@ -177,7 +178,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
 > ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ꜱᴇɴᴇꜱʜ`);
                         break;
-                    case '7':               
+                    case '7':
                         reply(`◈╾──────GROUP COMMAND LIST──────╼◈
 
 ╭────────◈
@@ -217,8 +218,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ⭓ Total Commands List GROUP: 11
 
 > ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ꜱᴇɴᴇꜱʜ`);
-                       break;
-                    case '8':               
+                        break;
+                    case '8':
                         reply(`◈╾──────FUN COMMAND LIST──────╼◈
 
 ╭────────◈
@@ -237,9 +238,8 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ⭓ Total Commands List FUN: 4
 
 > ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ꜱᴇɴᴇꜱʜ`);
-
                         break;
-                    case '10':               
+                    case '10':
                         reply(`◈╾──────OTHER COMMAND LIST──────╼◈
 
 ╭────────◈
@@ -255,19 +255,14 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 ⭓ Total Commands List OTHER: 3
 
 > ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ꜱᴇɴᴇꜱʜ`);
-
-
                         break;
                     default:
-                        reply("Invalid option. Please select a valid option🔴");
+                        reply("❌ Invalid Option Selected!");
                 }
-
             }
         });
-
-    } catch (e) {
-        console.error(e);
-        await conn.sendMessage(from, { react: { text: '❌', key: mek.key } })
+    } catch (error) {
+        conn.sendMessage(from, { react: { text: '❌', key: mek.key } });
         reply('An error occurred while processing your request.');
     }
 });
