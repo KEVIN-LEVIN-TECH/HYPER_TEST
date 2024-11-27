@@ -1,30 +1,37 @@
-const config = require('../config')
-const {cmd , commands} = require('../command')
+const { readEnv } = require('../lib/database');
+const { cmd } = require('../command');
 
+// ========== ALIVE COMMAND ==========
 cmd({
     pattern: "alive",
-    desc: "Check bot online or no.",
-    category: "main",
     react: "👋",
-    filename: __filename
+    desc: "Check bot status and display interactive menu",
+    category: "main",
+    filename: __filename,
 },
-async(conn, mek, m,{from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{
+async (conn, mek, m, { from, reply, pushname }) => {
+    try {
+        // Image URL (Replace this with your actual image URL)
+        const imageUrl = 'https://i.ibb.co/QdCxSQ6/20241123-121529.jpg';  // Change with your image URL
 
-let des = `👋 Hello ${pushname}
+        // Alive Message Content
+        const aliveDesc = `
+👋 Hello, ${pushname || "User"}
 
 ╔╭────────────╮╕
   │I'm Alive Now👾          │
 ╘╰────────────╯╜
 │A HYPER-MD │Whatsapp Bot Based │Many │Services With A │RealTime Automated │Consversational ││Experience, Enjoy💫.
-| So,I Think This Bots Are Useful To You.📍
-│
-│
-│1 || Bot Status ✅
-│2 || Bot Owner 👨‍💻
-╰───────────────●●►
+│ So,I Think This Bots Are Useful To You.📍
+╰──────────────────────────◈
 
-> ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ꜱᴇɴᴇꜱʜ `
+Reply Below Number
+
+1 || View Bot Status
+2 || Contact Bot Owner
+
+© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ꜱᴇɴᴇꜱʜ
+`;
 
         // Sending Image with Alive Message
         const sentMsg = await conn.sendMessage(
@@ -52,11 +59,11 @@ let des = `👋 Hello ${pushname}
                     case '1': {
                         // Option 1: Show Bot Status
                         const botStatus = `
-╭────❮ Bot Status ❯──●●►
+╭────❮ Bot Status ❯──◈
 │ ✅Bot Status: Online
 │ 📅 Date: ${new Date().toLocaleDateString()}
 │ 🕒 Time: ${new Date().toLocaleTimeString()}
-╰─────────────────●●►
+╰──────────────────◈
 
 © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ꜱᴇɴᴇꜱʜ
                         `;
