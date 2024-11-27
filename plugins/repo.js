@@ -28,7 +28,7 @@ Rᴇᴘᴏ Sɪᴛɪ Iɴꜰᴏᴍᴀᴛɪᴏɴ
 
 > ©ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ꜱᴇɴᴇꜱʜ 
 `
-await conn.sendMessage(from,{image:{url: `https://files.catbox.moe/de82e3.jpg`},caption:dec},{quoted:mek});
+await conn.sendMessage(from,{image:{url: `https://i.ibb.co/tpJGQkr/20241122-203120.jpg`},caption:dec},{quoted:mek});
 
 }catch(e){
 console.log(e)
